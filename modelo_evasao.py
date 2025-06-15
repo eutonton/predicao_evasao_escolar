@@ -18,7 +18,7 @@ df_renda_brasil = df_renda[df_renda['Regiao'] == 'brasil'].drop(columns='Regiao'
 df_renda_brasil.rename(columns={'Renda_Media': 'Renda_Media'}, inplace=True)
 
 # 📌 TRATAR IDEB (fazer média por rede pública e privada)
-# 📌 Limpar coluna IDEB: manter apenas linhas com números válidos
+#   Limpar coluna IDEB: manter apenas linhas com números válidos
 def is_number(s):
     try:
         float(s)
@@ -61,20 +61,8 @@ r2 = r2_score(y, y_pred)
 print(f'MSE: {mse}')
 print(f'R²: {r2}')
 
-# # 📌 IMPORTÂNCIA DAS VARIÁVEIS
-# importances = model.feature_importances_
-# features = X.columns
-# indices = np.argsort(importances)
 
-# plt.figure(figsize=(8,6))
-# sns.barplot(x=importances[indices], y=features[indices], palette='viridis')
-# plt.title('Importância das Variáveis no Modelo')
-# plt.xlabel('Importância')
-# plt.ylabel('Variáveis')
-# plt.show()
-
-# sns.barplot(x=importances[indices], y=features[indices], palette='viridis', legend=False)
-# 📌 PREVISÃO MÉDIA (como antes)
+# 📌 PREVISÃO MÉDIA
 future_data = pd.DataFrame({
     'Ano': [2025],
     'Dependencia_Administrativa': [le.transform(['pública'])[0]],
