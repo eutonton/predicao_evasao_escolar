@@ -1,6 +1,4 @@
-Claro! Aqui está o README atualizado incluindo a estrutura de pastas que você pediu:
 
----
 
 # Previsão de Evasão Escolar com Random Forest
 
